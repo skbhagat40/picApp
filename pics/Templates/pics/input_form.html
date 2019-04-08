@@ -1,0 +1,13 @@
+{% extends 'pics\base_template.html' %}
+{% block body_content %}
+
+{% if error_msg %}
+{{ error_msg }}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
+{%endblock%}
+

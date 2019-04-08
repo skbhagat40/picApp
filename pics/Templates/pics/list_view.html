@@ -1,0 +1,11 @@
+{% extends 'pics/base_template.html' %}
+{% block title %}
+Album
+{% endblock %}
+{% block body_content %}
+<ul>
+{% for album in all_albums %}
+    <li>"album name is " - <a href="{% url 'pics:detail' pk=album.pk %}">{{album}}</a> </li>
+{% endfor %}
+</ul>
+{% endblock %}

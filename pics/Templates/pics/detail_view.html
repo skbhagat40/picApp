@@ -1,0 +1,12 @@
+{% extends 'pics/base_template.html' %}
+{% block title %}
+{{Album}}
+{% endblock %}
+{% block body_content %}
+<ul>
+    <li>{{Album.Name}}</li>
+</ul>
+<a href="{% url 'pics:update_album' pk=Album.pk %}">Edit This Album</a>
+<a href="{% url 'pics:delete_album' pk=Album.pk %}">Delete This Album</a>
+<a href="{% url 'pics:all_albums_photos' album_id=Album.id %}">List of Photos</a>
+{% endblock %}

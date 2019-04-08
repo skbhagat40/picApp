@@ -1,0 +1,14 @@
+{% extends 'pics/base_template.html' %}
+{% block title %}
+Name - {{Photos}}
+{% endblock %}
+{% block body_content %}
+<ul>
+
+    <li>Caption - {{Photos.caption}}</li>
+    <li>Needs Edit - {{Photos.needs_edit}}</li>
+    <img src="{{Photos.image.url}}">
+</ul>
+<a href="{% url 'pics:delete_album_photos' pk=Photos.pk %}">Delete This Photo</a>
+<a href="{% url 'pics:update_album_photos' pk=Photos.pk %}">Edit This Photo</a>
+{% endblock %}

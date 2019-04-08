@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block css_files %}
+    {% endblock %}
+    {% block js_files_top %}
+    {% endblock %}
+</head>
+<body>
+{% block navbar %}
+<nav>
+    <a href="{%url 'pics:home' %}">Home</a>
+</nav>
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block body_content %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block js_files_bottom %}
+{% endblock %}
+</body>
+</html>

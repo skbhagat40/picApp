@@ -1,0 +1,13 @@
+{% extends 'pics/base_template.html' %}
+{% block title %}
+Album
+{% endblock %}
+{% block body_content %}
+<ul>
+       <li>{{aid}}</li>
+{% for photo in all_photos %}
+    <li>"photo name is " - <a href="{% url 'pics:detail_photos' pk=photo.pk %}">{{photo}}</a> </li>
+{% endfor %}
+</ul>
+<a href="{% url 'pics:add_album_photos' album_id=aid %}">Add Photo to the Album</a>
+{% endblock %}

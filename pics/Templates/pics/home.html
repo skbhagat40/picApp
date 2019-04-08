@@ -1,0 +1,30 @@
+{% extends 'pics\base_template.html' %}
+{% block title %}HomePage{%endblock%}
+{% block body_content %}
+<h1>Welcome to the Pics Website</h1>
+    <ul>
+        <li><a href="{% url 'pics:add_album' %}">Add an Album</a> </li>
+        <li><a href="{% url 'pics:all_albums' %}">List of Albums</a> </li>
+    </ul>
+{% endblock %}
+{% block navbar %}
+<nav>
+    <ul>
+        {% if not request.user.is_authenticated %}
+        <li><a href="{% url 'pics:login' %}">Login</a> </li>
+        {% endif %}
+        {% if not request.user.is_authenticated %}
+        <li><a href="{% url 'pics:register' %}">Register</a> </li>
+        {% endif %}
+        {% if  request.user.is_authenticated %}
+        <li><a href="{% url 'pics:logout' %}">Logout</a> </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock %}
+{% block footer %}
+<footer>
+    About Us
+    <p>We are a photo editing website. We edit pics and make the cool looking</p>
+</footer>
+{% endblock %}
